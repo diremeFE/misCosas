@@ -50,6 +50,7 @@ window.onload = function () {
   // Función para empezar el juego
   function empezarJuego() {
 
+    let botonCambioFondo = document.getElementById("botonCambioFondo");
     // ESTILOS PARA MOSTRAR LAS SECCIONES OCULTAS Y QUEDE UNA INTRODUCCIÓN AL JUEGO BONITA Y SUAVE
     myButton.style.opacity = "0";
 
@@ -57,6 +58,7 @@ window.onload = function () {
       // ESTA LÍNEA SIRVE PARA ESTABLECER UN TIEMPO DE 300ms PARA QUE SE DESVANEZCA EL BOTÓN
       myButton.style.display = "none";
       mySection.style.display = "flex";
+      botonCambioFondo.style.display="flex";
       for (let article of articles) {
         article.style.display = "flex";
       }
@@ -278,14 +280,19 @@ window.onload = function () {
     let titulo = document.getElementById("titulo");
     let misEstadisticas = document.getElementById("misEstadisticas");
 
+
     bolaSeleccion.style.display="none";
     bolaSeleccion2.style.display="flex";
-    miBody.style.backgroundColor = "#545454";
-    buttonVolume.style.backgroundColor = "white";
+    miBody.style.backgroundColor = "#1E1E1E";
+    buttonVolume.style.backgroundColor = "#fca311";
     buttonVolume.style.color="black";
-    buttonReglas.style.backgroundColor="black";
-    buttonReglas.style.color="white";
+    buttonReglas.style.backgroundColor="#e5e5e5";
     titulo.style.color="white";
+    misEstadisticas.style.backgroundColor="#36393B";
+    misEstadisticas.style.boxShadow = "12px 12px 30px 0px #000"; 
+
+
+
   }
   imagenOscuro2.addEventListener("click",fondoOscuro);
 
