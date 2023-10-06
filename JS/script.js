@@ -244,9 +244,6 @@ window.onload = function () {
 
   
 
-  
-
-
   //APARTADO DEL VOLUMEN
   let buttonVolume = document.getElementById("buttonVolume");
   let desplegableVolume = document.getElementById("desplegableVolume");
@@ -263,5 +260,47 @@ window.onload = function () {
   volumeControl.addEventListener("input", function () {
       backgroundMusic.volume = this.value;
   });
+
+
+
+  //FUNCIONES CAMBIO DE COLOR TEMA
+  let bolaSeleccion = document.getElementById("bolaSeleccion");
+  let imagenOscuro = document.getElementById("imagenOscuro");
+
+  let imagenOscuro2 = document.getElementById("imagenOscuro2");
+  let bolaSeleccion2 = document.getElementById("bolaSeleccion2");
+
+  let miBody = document.getElementById("miBody");
+
+  function fondoOscuro(){
+    let buttonVolume = document.getElementById("buttonVolume");
+    let buttonReglas = document.getElementById("buttonReglas");
+    let titulo = document.getElementById("titulo");
+    let misEstadisticas = document.getElementById("misEstadisticas");
+
+    bolaSeleccion.style.display="none";
+    bolaSeleccion2.style.display="flex";
+    miBody.style.backgroundColor = "#545454";
+    buttonVolume.style.backgroundColor = "white";
+    buttonVolume.style.color="black";
+    buttonReglas.style.backgroundColor="black";
+    buttonReglas.style.color="white";
+    titulo.style.color="white";
+  }
+  imagenOscuro2.addEventListener("click",fondoOscuro);
+
+  function fondoClaro(){
+
+    bolaSeleccion.style.display="flex";
+    bolaSeleccion2.style.display="none";
+    miBody.style.backgroundColor = "white";
+
+  }
+
+  imagenOscuro.addEventListener("click",fondoClaro);
+
+
+
+  
   
 };

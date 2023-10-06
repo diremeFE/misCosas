@@ -17,7 +17,7 @@
 
  <head>
 
-<body>
+<body id="miBody" style="background-color: white;">
     
 
 
@@ -27,7 +27,7 @@
         <!--REGLAS DEL JUEGO-->
         <div class="leftHeader">
             <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button id="buttonReglas" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Reglas
                 </button>
                 <ul class="dropdown-menu">
@@ -51,12 +51,12 @@
 
         <!--TITULO DEL JUEGO-->
         <div class="centerHeader">
-            <h1>El Ahorcado</h1>
+            <h1 id="titulo">El Ahorcado</h1>
         </div>
 
         <!--ESTADISTICAS DEL JUEGO-->
         <div class="rightHeader">
-            <div class="estadisticas">
+            <div id="misEstadisticas" class="estadisticas">
                 <a class="card-text">Partidas Ganadas: <p id="contadorGanadas"></p></a>    
                 <a class="card-text">Partidas Perdidas: <p id="contadorPerdidas"></p> </a> 
             </div>
@@ -204,17 +204,23 @@
 
     <div class="cambioFondo">
         <div id="botonCambio">
+
             <div class="izq">
-                <div class="redondo">
-
+                <div id="bolaSeleccion" class="redondo">
                 </div>
+                <img id="imagenOscuro" src="./IMG/sol.png" width="20px" alt="">
             </div>
-
+    
             <div class="derecha">
-                
+                <div id="bolaSeleccion2" class="redondo2">
+                    
+                </div>
+
+                <img id="imagenOscuro2" src="./IMG/luna.png" width="20px" alt="">
             </div>
         </div>
     </div>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
