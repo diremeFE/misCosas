@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Ahorcado</title>
+    <link rel="icon" href="./IMG/horca.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="./IMG/musicaFondo.mp4" type="audio/mpeg">
+    </audio>
+    
+
+ <head>
+
+<body>
+    
+
+
+    <!--DENTRO DE ESTE HEADER ENCONTRAREMOS EL APARTADO DE LAS REGLAS,TITULO Y ESTADISTICAS-->
+    <header id="header" class="myHeader">
+
+        <!--REGLAS DEL JUEGO-->
+        <div class="leftHeader">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Reglas
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">1. Pare empezar el juego dale al boton de "empezar juego"</a></li>
+                  <li><a class="dropdown-item" href="#">2. Ves añadiendo letras al input y dale a la tecla enter para comprobar</a></li>
+                  <li><a class="dropdown-item" href="#">3. Tendrás tres vidas para poder jugar</a></li>
+                  <li><a class="dropdown-item" href="#">4. Cada letra ACERTADA sumará 30 puntos, las FALLADAS restarán 10 puntos</a></li>
+
+                </ul>
+            </div>
+
+            <div class="controlVolume">
+                <button id="buttonVolume">Volumen <img src="./IMG/ajustes.png" width="20px" alt="imagenAjustes"></button>
+             </div>
+         
+             <div id="desplegableVolume">
+                 <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+             </div>
+
+        </div>
+
+        <!--TITULO DEL JUEGO-->
+        <div class="centerHeader">
+            <h1>El Ahorcado</h1>
+        </div>
+
+        <!--ESTADISTICAS DEL JUEGO-->
+        <div class="rightHeader">
+            <div class="estadisticas">
+                <a class="card-text">Partidas Ganadas: <p id="contadorGanadas"></p></a>    
+                <a class="card-text">Partidas Perdidas: <p id="contadorPerdidas"></p> </a> 
+            </div>
+
+            <div class="puntuacion">
+                <h5>PUNTUACION</h5>
+                <p id="contadorPuntuacion"></p>
+            </div>
+        </div>
+        
+        
+
+    </header>
+
+    <!--AQUI ESTA EL CONTENEDOR PARA LAS VIDASA-->
+    <div class="containerLifes">
+
+        <div class="myLifes">
+            <img id="imageOne" src="./IMG/corazon.png"  width="70px" alt="imagenCorazon">
+            <img id="imageTwo" src="./IMG/corazon.png" class="animate__animated animate__heartBeat animate__repeat-3" width="100px" alt="imagenCorazon">
+            <img id="imageThree" src="./IMG/corazon.png"  width="70px" alt="imagenCorazon">
+        </div>
+    </div>
+
+
+    
+
+    <!--BOTON PARA INICIAR JUEGO-->
+    <button id="myButton" class="buttonPlay">EMPEZAR JUEGO</button>
+    <button id="myButton2" class="buttonPlay2">REINICIAR JUEGO </button>
+
+
+
+    <!--DENTRO DE ESTE SECTION ESTA TODA LA PARTE DE LA IMAGEN,PISTAS Y INPUT-->
+    <section id="section" class="mySection">
+
+       <!--
+         <article id="article1" class="myArticle1">
+            <img src="./IMG/imagenHorca.png" alt="">
+        </article>
+       -->
+
+        <!--ESPACIO PARA LAS PISTAS-->
+        <article id="articleMiddle" class="myArticleMiddle">
+
+            <div class="pista pista0">
+                <h4>PISTA: </h4>
+                <p> Lugar donde viven muchas personas y que está hecho de ladrillos y cemento, suele ser alto y tiene ventanas y balcones</p>
+                <img id="imagePista" src="./IMG/edificio.png" alt="">
+            </div>
+
+            <div class="pista pista1">
+                <h4>PISTA: </h4>
+                <p>El nivel académico más alto que puedes alcanzar en la educación superior, requiere una investigación profunda y una tesis</p>
+                <img id="imagePista" src="./IMG/doctorado.png" alt="">
+
+            </div>
+
+            <div class="pista pista2">
+                <h4>PISTA: </h4>
+                <p>Un profesional legal que defiende a sus clientes en los tribunales y brinda asesoramiento legal</p>
+                <img id="imagePista" src="./IMG/abogado.png" alt="">
+
+            </div>
+
+            <div class="pista pista3">
+                <h4>PISTA: </h4>
+                <p>Una prenda de vestir que se usa alrededor del cuello para ocasiones formales</p>
+                <img id="imagePista" src="./IMG/corbata.png" alt="">
+
+            </div>
+
+            <div class="pista pista4">
+                <h4>PISTA: </h4>
+                <p>Calzado abierto y cómodo que se usa en climas cálidos</p>
+                <img id="imagePista" src="./IMG/sandalias.png" alt="">
+
+            </div>
+
+            <div class="pista pista5">
+                <h4>PISTA: </h4>
+                <p>Una actividad física planificada y repetitiva que involucra movimiento del cuerpo con el propósito de mejorar la condición física, la salud o el rendimiento atlético. Puede abarcar una amplia variedad de actividades</p>
+            
+                <img id="imagePista" src="./IMG/ejercicio.jpg" width="100px" alt="">
+
+            </div>
+
+            <div class="pista pista6">
+                <h4>PISTA: </h4>
+                <p>Un dispositivo de entrada que se utiliza para escribir en computadoras y dispositivos electrónicos</p>
+            
+                <img id="imagePista" src="./IMG/teclado.png" width="100px" alt="">
+            </div>
+
+            <div class="pista pista7">
+                <h4>PISTA: </h4>
+                <p>Otro término para una computadora personal o PC</p>
+                <img id="imagePista" src="./IMG/ordenador.png" alt="">
+
+            </div>
+
+            <div class="pista pista8">
+                <h4>PISTA: </h4>
+                <p>Un cuaderno o bloc de notas utilizado para tomar notas o escribir información</p>
+                <img id="imagePista" src="./IMG/libreta.png" alt="">
+
+            </div>
+
+            <div class="pista pista9">
+                <h4>PISTA: </h4>
+                <p>Un lugar donde las personas van para cortarse el pelo y recibir servicios de belleza capilar</p>
+                <img id="imagePista" src="./IMG/peluqueria.PNG" alt="">
+
+            </div>
+
+            <div class="pista pista10">
+                <h4>PISTA: </h4>
+                <p>Un profesional de la salud dental que se especializa en el cuidado de los dientes y las encías</p>
+                <img id="imagePista" src="./IMG/dentista.PNG" alt="">
+
+            </div>
+            
+        </article>
+
+        <!--ESPACIO PARA LA INTERACCION DEL USUARIO CON EL INPUT ETC-->
+        <article id="article2" class="myArticle2">
+
+            <div id="wordDisplay" class="espacioGuiones">
+                <!--AQUI ESTAN LOS GUIONES DE LA PALABRA-->
+            </div>
+
+            <!--INPUT PARA LAS LETRAS-->
+            <div class="inputQuestion">
+                <input id="myInput" type="text" placeholder="Introduce una letra"> <button type="submit" id="buttonSend">Probar</button>
+            </div>
+
+            <!--AQUI ESTA EL ESPACIO A MOSTRAR DE LAS PALABRAS CORRECTAS E INCORRECTAS-->
+            <div class="checkWords">
+                <h5>Letras incorrectas: <p id="mostrarIncorrectas"></p></h5>
+                <h5>Letras correctas: <p id="mostrarCorrectas"></p></h5>
+            </div>
+        </article>
+
+    </section>
+
+    <div class="cambioFondo">
+        <div id="botonCambio">
+            <div class="izq">
+                <div class="redondo">
+
+                </div>
+            </div>
+
+            <div class="derecha">
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.3/bootbox.min.js"></script>
+    <script src="./JS/script.js"></script>
+
+</body>
+</html>

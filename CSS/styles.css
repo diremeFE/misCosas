@@ -1,0 +1,375 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.myHeader {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.desplegableRules p{
+    margin: 15px;
+}
+
+
+.rules {
+    width: 30%;
+    height: 100%;
+    position: relative; 
+}
+
+.dropdown{
+    margin-top: 10px;
+}
+
+.leftHeader {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: row;
+}
+
+.leftHeader h4{
+    color: #516392;
+}
+
+.visible {
+    display: flex !important;
+}
+
+.centerHeader {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+
+.rightHeader{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.puntuacion{
+    width: 30%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.puntuacion h5{
+    font-size: 20px;
+    background: linear-gradient(to right, #823ECF 1%, #CF1512 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+#contadorPuntuacion{
+    background: linear-gradient(to right, #CF481F 1%, #CFA311 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.rightHeader h4{
+    color: #516392;
+    display: none;
+}
+
+.rightHeader img{
+    display: none;
+}
+
+.containerLifes {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.myLifes {
+    width: 300px;
+    height: 100%;
+    padding: 20px;
+    background-color: #516392;
+    border-radius: 23px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.animate__animated.animate__heartBeat:nth-child(2){
+    animation-duration: 2s;
+}
+
+.centerHeader h1 {
+    color: rgb(41, 41, 41);
+    font-size: 40px;
+}
+
+.mySection{
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    margin-top: 80px;
+}
+
+.cambioFondo{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: end;
+    justify-content: baseline;
+    background-color: red;
+}
+
+#botonCambio{
+    width: 90px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20px;
+    background-color: green;
+}
+
+.izq{
+    width: 50%;
+    height: 100%;
+}
+
+.derecha{
+    width: 50%;
+    height: 100%;
+}
+
+.myArticle2{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 26px;
+    margin-left: 30px;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 100%);
+}
+
+.myArticleMiddle{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.estadisticas{
+    width: 500px;
+    height:75px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    background: var( #F0F0F3);
+    box-shadow: 1.5px 1.5px 3px 0px rgba(174, 174, 192, 0.40), -1px -1px 3px 0px #FFF;     
+}
+
+.estadisticas h5{
+    font-weight: 600;
+}
+
+.estadisticas a{
+    text-decoration: none;
+    color: #516392;
+}
+
+#imagePista{
+    margin-top: 15px;
+    width: 400px;
+    height: auto;
+    border-radius: 16px;
+}
+
+#articleMiddle div{
+    display: none;
+}
+
+.pista{
+    background-color: #516392;
+    padding: 20px;
+    height: 100%;
+    border-radius: 24px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+}
+
+.pista h4{
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.pista p{
+    color: #CCCCCC;
+    font-weight: 500;
+}
+
+.espacioGuiones{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #516392;
+}
+
+.inputQuestion{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+input{
+    width: 180px;
+    height:55px;
+    border-radius: 10px;
+    border: 2.5px solid #516392;
+    padding-left: 10px;
+}
+
+.inputQuestion button{
+    background-color: #516392;
+    color: white;
+    width: 75px;
+    height: 55px;
+    border: none;
+    border-radius: 9px;
+    font-size: 15px;
+    margin-left: 3px;
+}
+
+#myInput::placeholder{
+    color: rgb(146, 146, 146);
+    font-size: 14px;
+}
+
+.checkWords{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.checkWords h5{
+    color: #516392;
+    font-size: 17px;
+}
+
+
+.buttonPlay{
+    width: 160px;
+    height: 70px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    background-color: #345ECE;
+    font-size: 16px;
+    transition:  opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttonPlay2{
+    width: 160px;
+    height: 70px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    background-color: #345ECE;
+    font-size: 16px;
+    transition:  opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#desplegableVolume{
+    width: 200px;
+    height: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#desplegableVolume button{
+    width: 40px;
+    height: 40px;
+    background-color: #a5120b;
+    border-radius: 12px;
+    color: white;
+    border: none;
+}
+
+#buttonVolume{
+    height: 40px;
+    background-color: #516392;
+    border-radius: 10px;
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#buttonVolume img{
+    margin-left: 6px;
+}
