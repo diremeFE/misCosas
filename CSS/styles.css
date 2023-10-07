@@ -143,14 +143,14 @@
     justify-content: center;
     align-items: center;
     display: none;
-    margin-top: 80px;
+    margin-top: 45px;
 }
 
 .cambioFondo{
     width: 100%;
-    height: 250px;
+    height: 60px;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: baseline;
     display: none;
 }
@@ -400,7 +400,7 @@ input{
     display: none;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
 
 }
 
@@ -430,4 +430,29 @@ input{
 
 #buttonVolume img{
     margin-left: 6px;
+}
+
+.cambioPalabra{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.cambioPalabra img{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.cambioPalabra h6{
+    color: #345ECE;
+    display: none;
+}
+
+.cambioPalabra h6:hover{
+    cursor: pointer;
+    text-decoration: underline;
 }

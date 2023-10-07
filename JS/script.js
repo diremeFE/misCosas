@@ -5,6 +5,7 @@ window.onload = function () {
   let articles = mySection.querySelectorAll("article");
   let wordDisplay = document.getElementById("wordDisplay");
   let myInput = document.getElementById("myInput");
+  
   let randomWord = "";
   let imageOne = document.getElementById("imageOne");
   let imageTwo = document.getElementById("imageTwo");
@@ -25,6 +26,9 @@ window.onload = function () {
 
   let contadorPuntuacion = document.getElementById("contadorPuntuacion");
   let puntuacion = 0;
+
+  let cambiar = document.getElementById("cambiar");
+  let fotoCambio = document.getElementById("fotoCambio");
 
   // ARRAY CON LAS PALABRAS PARA EL JUEGO
   const arrayWords = [
@@ -75,7 +79,6 @@ window.onload = function () {
       mySection.style.display = "flex";
       botonCambioFondo.style.display = "flex";
       articles.style.display = "flex";
-
     }, 300);
 
     // CON ESTAS 2 LINEAS OBTENDREMOS UNA PALABRA ALEATORIA DEL ARRAY DE PALABRAS
@@ -85,6 +88,8 @@ window.onload = function () {
     //VAMOS A SELECCIONAR DEL HTML CADA CLASE CON LA PALABRA pista Y LE AÑADIMOS EL VALOR DE RANDOM INDEX PARA AGARRAR CADA PISTA ADECUADA
     let pista = document.querySelector(".pista" + randomIndex);
     pista.style.display = "flex";
+    fotoCambio.style.display = "flex";
+    cambiar.style.display="flex";
 
     // CON ESTA LINEA VAMOS A CREAR UN STRING CON _ SEGUN LA LONGITUD DE LA PALABRA ALEATORIA
     dashes = "_".repeat(randomWord.length);
@@ -232,6 +237,8 @@ window.onload = function () {
   }
   document.addEventListener("keydown", manejarTeclaPresionada);
 
+
+
   //EN ESTA FUNCION CONTROLAREMOS EL REINICIO DEL JUEGO
   function reiniciarJuego() {
 
@@ -298,6 +305,7 @@ window.onload = function () {
   //TODO LO RELACIONADO CON EL VOLUMEN DEL JUEGO
   let buttonVolume = document.getElementById("buttonVolume");
   let desplegableVolume = document.getElementById("desplegableVolume");
+  let ajustes = document.getElementById("ajustes");
   const backgroundMusic = document.getElementById("backgroundMusic");
   const volumeControl = document.getElementById("volumeControl");
 
@@ -306,6 +314,11 @@ window.onload = function () {
     desplegableVolume.style.display = "flex";
   }
   buttonVolume.addEventListener("click", desplegarAjustesVolumen);
+
+  function ocultarAjustesVolumen() {
+    desplegableVolume.style.display = "none";
+  }
+  ajustes.addEventListener("click", ocultarAjustesVolumen);
 
   //EN ESTE EVENTO CONTROLAREMOS LA BARRA DE SONIDO DEL JUEGO
   volumeControl.addEventListener("input", function() {
@@ -349,6 +362,8 @@ window.onload = function () {
     buttonReglas.style.backgroundColor = "#e5e5e5";
 
     titulo.style.color = "white";
+
+    cambiar.style.color="white";
 
     misEstadisticas.style.backgroundColor = "#36393B";
     misEstadisticas.style.boxShadow = "12px 12px 30px 0px #000";
@@ -402,6 +417,7 @@ window.onload = function () {
     misEstadisticas.style.boxShadow = "";
     contadorPartidasGan.style.color = "";
     contadorPartidasPerd.style.color = "";
+    cambiar.style.color="";
 
     botonCambio.style.backgroundColor = "";
     bolaSeleccion2.style.backgroundColor = "";
@@ -428,5 +444,7 @@ window.onload = function () {
     imagenOscuro2.style.display = "flex";
   }
   imagenOscuro.addEventListener("click", fondoClaro);
+
+  cambiar.addEventListener('click',reiniciarJuego);
 
 };
