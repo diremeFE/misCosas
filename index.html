@@ -57,11 +57,11 @@
         <!--ESTADISTICAS DEL JUEGO-->
         <div class="rightHeader">
             <div id="misEstadisticas" class="estadisticas">
-                <a class="card-text">Partidas Ganadas: <p id="contadorGanadas"></p></a>    
-                <a class="card-text">Partidas Perdidas: <p id="contadorPerdidas"></p> </a> 
+                <a id="contadorPartidasGan" class="card-text">Partidas Ganadas: <p id="contadorGanadas"></p></a>    
+                <a id="contadorPartidasPerd" class="card-text">Partidas Perdidas: <p id="contadorPerdidas"></p> </a> 
             </div>
 
-            <div class="puntuacion">
+            <div id="punt" class="puntuacion">
                 <h5>PUNTUACION</h5>
                 <p id="contadorPuntuacion"></p>
             </div>
@@ -74,7 +74,7 @@
     <!--AQUI ESTA EL CONTENEDOR PARA LAS VIDASA-->
     <div class="containerLifes">
 
-        <div class="myLifes">
+        <div id="vidas" class="myLifes">
             <img id="imageOne" src="./IMG/corazon.png"  width="70px" alt="imagenCorazon">
             <img id="imageTwo" src="./IMG/corazon.png" class="animate__animated animate__heartBeat animate__repeat-3" width="100px" alt="imagenCorazon">
             <img id="imageThree" src="./IMG/corazon.png"  width="70px" alt="imagenCorazon">
@@ -140,7 +140,7 @@
                 <h4>PISTA: </h4>
                 <p>Una actividad física planificada y repetitiva que involucra movimiento del cuerpo con el propósito de mejorar la condición física, la salud o el rendimiento atlético. Puede abarcar una amplia variedad de actividades</p>
             
-                <img id="imagePista" src="./IMG/ejercicio.jpg" width="100px" alt="">
+                <img id="imagePista" src="./IMG/ejercicio.jpg" alt="">
 
             </div>
 
@@ -148,7 +148,7 @@
                 <h4>PISTA: </h4>
                 <p>Un dispositivo de entrada que se utiliza para escribir en computadoras y dispositivos electrónicos</p>
             
-                <img id="imagePista" src="./IMG/teclado.png" width="100px" alt="">
+                <img id="imagePista" src="./IMG/teclado.png" alt="">
             </div>
 
             <div class="pista pista7">
@@ -178,6 +178,85 @@
                 <img id="imagePista" src="./IMG/dentista.PNG" alt="">
 
             </div>
+
+            <div class="pista pista11">
+                <h4>PISTA: </h4>
+                <p>Un instrumento musical de cuerda que se toca con los dedos o con una púa. Puede tener 6 o 12 cuerdas.</p>
+                <img id="imagePista" src="./IMG/guitarra.png"  alt="">
+            </div>
+            
+            <div class="pista pista12">
+                <h4>PISTA: </h4>
+                <p>Una abertura en una pared o en una estructura de un edificio que permite la entrada de luz y aire. Puede tener cristal o madera.</p>
+                <img id="imagePista" src="./IMG/ventana.png"  alt="">
+            </div>
+            
+            <div class="pista pista13">
+                <h4>PISTA: </h4>
+                <p>El lugar de una casa o un restaurante donde se preparan y cocinan alimentos. Suele estar equipado con una estufa, un horno y utensilios de cocina.</p>
+                <img id="imagePista" src="./IMG/cocina.png"  alt="">
+            </div>
+            
+            <div class="pista pista14">
+                <h4>PISTA: </h4>
+                <p>Un vehículo de dos ruedas que se impulsa pedaleando. Es una forma popular de transporte y ejercicio físico.</p>
+                <img id="imagePista" src="./IMG/bicicleta.png"  alt="">
+            </div>
+            
+            <div class="pista pista15">
+                <h4>PISTA: </h4>
+                <p>Una forma de arte que utiliza colores, pigmentos y medios para crear obras visuales. Puede ser pintura al óleo, acrílica, acuarela, entre otros.</p>
+                <img id="imagePista" src="./IMG/pintura.png"  alt="">
+            </div>
+
+            <div class="pista pista16">
+                <h4>PISTA: </h4>
+                <p>Un objeto que se utiliza para protegerse de la lluvia o el sol. Suele tener un mango y se abre para cubrirse.</p>
+                <img id="imagePista" src="./IMG/paraguas.png" alt="">
+            </div>
+            
+            <div class="pista pista17">
+                <h4>PISTA: </h4>
+                <p>Calzado deportivo o zapatillas de deporte que se utiliza para actividades físicas o deportivas. Son cómodas y suelen tener suela de goma.</p>
+                <img id="imagePista" src="./IMG/zapatillas.png" alt="">
+            </div>
+            
+            <div class="pista pista18">
+                <h4>PISTA: </h4>
+                <p>Un dispositivo de comunicación que se utiliza para hacer llamadas telefónicas, enviar mensajes de texto y acceder a Internet. Puede ser móvil o fijo.</p>
+                <img id="imagePista" src="./IMG/telefono.png" alt="">
+            </div>
+            
+            <div class="pista pista19">
+                <h4>PISTA: </h4>
+                <p>Una prenda de vestir que se coloca sobre el torso y que generalmente tiene mangas cortas. Puede tener diseños, colores y estampados diversos.</p>
+                <img id="imagePista" src="./IMG/camiseta.png" alt="">
+            </div>
+            
+            <div class="pista pista20">
+                <h4>PISTA: </h4>
+                <p>Un dispositivo que se utiliza para medir el tiempo. Puede ser de pulsera o de bolsillo y suele tener manecillas o una pantalla digital.</p>
+                <img id="imagePista" src="./IMG/reloj.png" alt="">
+            </div>
+            
+            <div class="pista pista21">
+                <h4>PISTA: </h4>
+                <p>Un instrumento de escritura que se utiliza para hacer dibujos o escribir en papel. Tiene una mina de grafito o tinta en su interior.</p>
+                <img id="imagePista" src="./IMG/lapiz.png" alt="">
+            </div>
+            
+            <div class="pista pista22">
+                <h4>PISTA: </h4>
+                <p>Una publicación impresa que contiene noticias, artículos y fotografías sobre diversos temas. Puede ser de entretenimiento, noticias, deportes, etc.</p>
+                <img id="imagePista" src="./IMG/revista.png" alt="">
+            </div>
+            
+            <div class="pista pista23">
+                <h4>PISTA: </h4>
+                <p>Un lugar de aprendizaje donde los estudiantes asisten a clases y reciben educación formal. Puede ser una escuela primaria, secundaria o universidad.</p>
+                <img id="imagePista" src="./IMG/escuela.png" alt="">
+            </div>
+            
             
         </article>
 
@@ -206,13 +285,13 @@
         <div id="botonCambio">
 
             <div class="izq">
-                <div id="bolaSeleccion" class="redondo">
+                <div id="bolaSeleccion" class="redondo animate__animated animate__fadeInRight">
                 </div>
                 <img id="imagenOscuro" src="./IMG/sol.png" width="20px" alt="">
             </div>
     
             <div class="derecha">
-                <div id="bolaSeleccion2" class="redondo2">
+                <div id="bolaSeleccion2" class="redondo2 animate__animated animate__fadeInLeft">
                     
                 </div>
 

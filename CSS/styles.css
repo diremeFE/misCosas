@@ -66,12 +66,17 @@
 }
 
 .puntuacion{
-    width: 30%;
-    height: 100px;
+    width: 20%;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-left: 10px;
+    line-height: 25px;
+    border-radius: 20px;
+    background: var( #F0F0F3);
+    box-shadow: 1.5px 1.5px 3px 0px rgba(174, 174, 192, 0.40), -1px -1px 3px 0px #FFF;  
 }
 
 .puntuacion h5{
@@ -133,7 +138,7 @@
 
 .mySection{
     width: 100%;
-    height: 450px;
+    height: 520px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,7 +150,7 @@
     width: 100%;
     height: 250px;
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: baseline;
     display: none;
 }
@@ -179,6 +184,14 @@
     background-color: white;
     position: absolute;
     z-index: 1;
+}
+
+.animate__animated.animate__fadeInRight{
+    animation-duration: 0.2s;
+}
+
+.animate__animated.animate__fadeInLeft{
+    animation-duration: 0.2s;
 }
 
 .redondo2{
