@@ -14,7 +14,7 @@
 }
 
 
-.desplegableRules p{
+.desplegableRules p {
     margin: 15px;
 }
 
@@ -22,10 +22,10 @@
 .rules {
     width: 30%;
     height: 100%;
-    position: relative; 
+    position: relative;
 }
 
-.dropdown{
+.dropdown {
     margin-top: 10px;
 }
 
@@ -38,12 +38,8 @@
     flex-direction: row;
 }
 
-.leftHeader h4{
+.leftHeader h4 {
     color: #516392;
-}
-
-.visible {
-    display: flex !important;
 }
 
 .centerHeader {
@@ -56,7 +52,7 @@
 }
 
 
-.rightHeader{
+.rightHeader {
     width: 40%;
     height: 100%;
     display: flex;
@@ -65,7 +61,7 @@
     padding-left: 10px;
 }
 
-.puntuacion{
+.puntuacion {
     width: 20%;
     height: 80px;
     display: flex;
@@ -75,11 +71,11 @@
     margin-left: 10px;
     line-height: 25px;
     border-radius: 20px;
-    background: var( #F0F0F3);
-    box-shadow: 1.5px 1.5px 3px 0px rgba(174, 174, 192, 0.40), -1px -1px 3px 0px #FFF;  
+    background: var(#F0F0F3);
+    box-shadow: 1.5px 1.5px 3px 0px rgba(174, 174, 192, 0.40), -1px -1px 3px 0px #FFF;
 }
 
-.puntuacion h5{
+.puntuacion h5 {
     font-size: 20px;
     background: linear-gradient(to right, #823ECF 1%, #CF1512 100%);
     -webkit-background-clip: text;
@@ -88,7 +84,7 @@
     margin-top: 10px;
 }
 
-#contadorPuntuacion{
+#contadorPuntuacion {
     background: linear-gradient(to right, #CF481F 1%, #CFA311 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -96,12 +92,12 @@
     font-size: 30px;
 }
 
-.rightHeader h4{
+.rightHeader h4 {
     color: #516392;
     display: none;
 }
 
-.rightHeader img{
+.rightHeader img {
     display: none;
 }
 
@@ -127,7 +123,7 @@
 
 
 
-.animate__animated.animate__heartBeat:nth-child(2){
+.animate__animated.animate__heartBeat:nth-child(2) {
     animation-duration: 2s;
 }
 
@@ -136,7 +132,7 @@
     font-size: 40px;
 }
 
-.mySection{
+.mySection {
     width: 100%;
     height: 520px;
     display: flex;
@@ -146,7 +142,7 @@
     margin-top: 45px;
 }
 
-.cambioFondo{
+.cambioFondo {
     width: 100%;
     height: 60px;
     display: flex;
@@ -155,7 +151,7 @@
     display: none;
 }
 
-#botonCambio{
+#botonCambio {
     width: 100px;
     height: 50px;
     display: flex;
@@ -167,7 +163,7 @@
     background-color: rgb(49, 49, 49);
 }
 
-.izq{
+.izq {
     width: 50%;
     height: 100%;
     display: flex;
@@ -176,9 +172,9 @@
     position: relative;
 }
 
-.redondo{
+.redondo {
     width: 30px;
-    height:30px;
+    height: 30px;
     margin-left: 3px;
     border-radius: 100%;
     background-color: white;
@@ -186,17 +182,17 @@
     z-index: 1;
 }
 
-.animate__animated.animate__fadeInRight{
+.animate__animated.animate__fadeInRight {
     animation-duration: 0.2s;
 }
 
-.animate__animated.animate__fadeInLeft{
+.animate__animated.animate__fadeInLeft {
     animation-duration: 0.2s;
 }
 
-.redondo2{
+.redondo2 {
     width: 30px;
-    height:30px;
+    height: 30px;
     margin-left: 3px;
     border-radius: 100%;
     background-color: white;
@@ -205,23 +201,23 @@
     display: none;
 }
 
-#imagenOscuro{
+#imagenOscuro {
     position: absolute;
-    z-index: 2; 
-    top: 7; 
-    left: 10; 
+    z-index: 2;
+    top: 7;
+    left: 10;
 }
 
-#imagenOscuro2{
+#imagenOscuro2 {
     position: absolute;
-    z-index: 2; 
-    top: 7; 
-    left: 10; 
+    z-index: 2;
+    top: 7;
+    left: 10;
 }
 
 
 
-.derecha{
+.derecha {
     width: 50%;
     height: 100%;
     display: flex;
@@ -229,7 +225,7 @@
     justify-content: center;
 }
 
-.myArticle2{
+.myArticle2 {
     width: 30%;
     height: 100%;
     display: flex;
@@ -238,10 +234,10 @@
     flex-direction: column;
     border-radius: 26px;
     margin-left: 30px;
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 100%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
 }
 
-.myArticleMiddle{
+.myArticleMiddle {
     width: 20%;
     height: 100%;
     display: flex;
@@ -251,40 +247,40 @@
 }
 
 
-.estadisticas{
+.estadisticas {
     width: 500px;
-    height:75px;
+    height: 75px;
     padding: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     border-radius: 20px;
-    background: var( #F0F0F3);
-    box-shadow: 1.5px 1.5px 3px 0px rgba(174, 174, 192, 0.40), -1px -1px 3px 0px #FFF;     
+    background: var(#F0F0F3);
+    box-shadow: 1.5px 1.5px 3px 0px rgba(174, 174, 192, 0.40), -1px -1px 3px 0px #FFF;
 }
 
-.estadisticas h5{
+.estadisticas h5 {
     font-weight: 600;
 }
 
-.estadisticas a{
+.estadisticas a {
     text-decoration: none;
     color: #516392;
 }
 
-#imagePista{
+#imagePista {
     margin-top: 15px;
     width: 400px;
     height: auto;
     border-radius: 16px;
 }
 
-#articleMiddle div{
+#articleMiddle div {
     display: none;
 }
 
-.pista{
+.pista {
     background-color: #516392;
     padding: 20px;
     height: 100%;
@@ -295,18 +291,18 @@
     flex-direction: column;
 }
 
-.pista h4{
+.pista h4 {
     color: white;
     font-size: 30px;
     font-weight: 700;
 }
 
-.pista p{
+.pista p {
     color: #CCCCCC;
     font-weight: 500;
 }
 
-.espacioGuiones{
+.espacioGuiones {
     width: 100%;
     height: 30%;
     display: flex;
@@ -316,7 +312,7 @@
     color: #516392;
 }
 
-.inputQuestion{
+.inputQuestion {
     width: 100%;
     height: 20%;
     display: flex;
@@ -324,15 +320,15 @@
     align-items: start;
 }
 
-input{
+input {
     width: 180px;
-    height:55px;
+    height: 55px;
     border-radius: 10px;
     border: 2.5px solid #516392;
     padding-left: 10px;
 }
 
-.inputQuestion button{
+.inputQuestion button {
     background-color: #516392;
     color: white;
     width: 75px;
@@ -343,12 +339,12 @@ input{
     margin-left: 3px;
 }
 
-#myInput::placeholder{
+#myInput::placeholder {
     color: rgb(146, 146, 146);
     font-size: 14px;
 }
 
-.checkWords{
+.checkWords {
     width: 100%;
     height: 20%;
     display: flex;
@@ -357,13 +353,13 @@ input{
     flex-direction: row;
 }
 
-.checkWords h5{
+.checkWords h5 {
     color: #516392;
     font-size: 17px;
 }
 
 
-.buttonPlay{
+.buttonPlay {
     width: 160px;
     height: 70px;
     border-radius: 15px;
@@ -371,14 +367,14 @@ input{
     color: white;
     background-color: #345ECE;
     font-size: 16px;
-    transition:  opacity 0.3s ease;
+    transition: opacity 0.3s ease;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.buttonPlay2{
+.buttonPlay2 {
     width: 160px;
     height: 70px;
     border-radius: 15px;
@@ -386,7 +382,7 @@ input{
     color: white;
     background-color: #345ECE;
     font-size: 16px;
-    transition:  opacity 0.3s ease;
+    transition: opacity 0.3s ease;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -394,7 +390,7 @@ input{
     display: none;
 }
 
-#desplegableVolume{
+#desplegableVolume {
     width: 200px;
     height: 50px;
     display: none;
@@ -404,7 +400,7 @@ input{
 
 }
 
-#desplegableVolume button{
+#desplegableVolume button {
     width: 40px;
     height: 40px;
     background-color: #a5120b;
@@ -413,7 +409,7 @@ input{
     border: none;
 }
 
-#buttonVolume{
+#buttonVolume {
     height: 40px;
     background-color: #516392;
     border-radius: 10px;
@@ -428,11 +424,11 @@ input{
     flex-direction: row;
 }
 
-#buttonVolume img{
+#buttonVolume img {
     margin-left: 6px;
 }
 
-.cambioPalabra{
+.cambioPalabra {
     width: 100%;
     height: 100px;
     display: flex;
@@ -441,18 +437,18 @@ input{
     flex-direction: row;
 }
 
-.cambioPalabra img{
+.cambioPalabra img {
     margin-right: 10px;
     margin-bottom: 10px;
     display: none;
 }
 
-.cambioPalabra h6{
+.cambioPalabra h6 {
     color: #345ECE;
     display: none;
 }
 
-.cambioPalabra h6:hover{
+.cambioPalabra h6:hover {
     cursor: pointer;
     text-decoration: underline;
 }

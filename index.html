@@ -1,317 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego del Ahorcado</title>
     <link rel="icon" href="./IMG/horca.ico" type="image/x-icon">
     <link rel="stylesheet" href="./CSS/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <audio id="backgroundMusic" autoplay loop>
         <source src="./IMG/musicaFondo.mp4" type="audio/mpeg">
     </audio>
-    
-
- <head>
-
-<body id="miBody" style="background-color: white;">
-    
 
 
-    <!--DENTRO DE ESTE HEADER ENCONTRAREMOS EL APARTADO DE LAS REGLAS,TITULO Y ESTADISTICAS-->
-    <header id="header" class="myHeader">
+    <head>
 
-        <!--REGLAS DEL JUEGO-->
-        <div class="leftHeader">
-            <div class="dropdown">
-                <button id="buttonReglas" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Reglas
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">1. Para empezar el juego dale al boton de "empezar juego"</a></li>
-                  <li><a class="dropdown-item" href="#">2. Ves añadiendo letras al input y dale a la tecla enter para comprobar</a></li>
-                  <li><a class="dropdown-item" href="#">3. Tendrás tres vidas para poder jugar</a></li>
-                  <li><a class="dropdown-item" href="#">4. Cada letra ACERTADA sumará 30 puntos, las FALLADAS restarán 10 puntos</a></li>
+    <body id="miBody" style="background-color: white;">
 
-                </ul>
+
+
+        <!--DENTRO DE ESTE HEADER ENCONTRAREMOS EL APARTADO DE LAS REGLAS,TITULO Y ESTADISTICAS-->
+        <header id="header" class="myHeader">
+
+            <!--REGLAS DEL JUEGO-->
+            <div class="leftHeader">
+                <div class="dropdown">
+                    <button id="buttonReglas" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Reglas
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">1. Para empezar el juego dale al boton de "empezar
+                                juego"</a></li>
+                        <li><a class="dropdown-item" href="#">2. Ves añadiendo letras al input y dale a la tecla enter
+                                para comprobar</a></li>
+                        <li><a class="dropdown-item" href="#">3. Tendrás tres vidas para poder jugar</a></li>
+                        <li><a class="dropdown-item" href="#">4. Cada letra ACERTADA sumará 30 puntos, las FALLADAS
+                                restarán 10 puntos</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="controlVolume">
+                    <button id="buttonVolume">Volumen <img src="./IMG/ajustes.png" width="20px"
+                            alt="imagenAjustes"></button>
+                </div>
+
+                <div id="desplegableVolume">
+                    <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5">
+                    <img id="ajustes" src="./IMG/cruz.png" width="25px" alt="">
+                </div>
+
             </div>
 
-            <div class="controlVolume">
-                <button id="buttonVolume">Volumen <img src="./IMG/ajustes.png" width="20px" alt="imagenAjustes"></button>
-            </div>
-         
-             <div id="desplegableVolume">
-                 <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.5">
-                 <img id="ajustes" src="./IMG/cruz.png" width="25px" alt="">
-             </div>
-
-        </div>
-
-        <!--TITULO DEL JUEGO-->
-        <div class="centerHeader">
-            <h1 id="titulo">El Ahorcado</h1>
-        </div>
-
-        <!--ESTADISTICAS DEL JUEGO-->
-        <div class="rightHeader">
-            <div id="misEstadisticas" class="estadisticas">
-                <a id="contadorPartidasGan" class="card-text">Partidas Ganadas: <p id="contadorGanadas"></p></a>    
-                <a id="contadorPartidasPerd" class="card-text">Partidas Perdidas: <p id="contadorPerdidas"></p> </a> 
+            <!--TITULO DEL JUEGO-->
+            <div class="centerHeader">
+                <h1 id="titulo">El Ahorcado</h1>
             </div>
 
-            <div id="punt" class="puntuacion">
-                <h5>PUNTUACION</h5>
-                <p id="contadorPuntuacion"></p>
+            <!--ESTADISTICAS DEL JUEGO-->
+            <div class="rightHeader">
+                <div id="misEstadisticas" class="estadisticas">
+                    <a id="contadorPartidasGan" class="card-text">Partidas Ganadas: <p id="contadorGanadas"></p></a>
+                    <a id="contadorPartidasPerd" class="card-text">Partidas Perdidas: <p id="contadorPerdidas"></p> </a>
+                </div>
+
+                <div id="punt" class="puntuacion">
+                    <h5>PUNTUACION</h5>
+                    <p id="contadorPuntuacion"></p>
+                </div>
+            </div>
+
+
+
+        </header>
+
+        <!--AQUI ESTA EL CONTENEDOR PARA LAS VIDASA-->
+        <div class="containerLifes">
+
+            <div id="vidas" class="myLifes">
+                <img id="imageOne" src="./IMG/corazon.png" width="70px" alt="imagenCorazon">
+                <img id="imageTwo" src="./IMG/corazon.png"
+                    class="animate__animated animate__heartBeat animate__repeat-3" width="100px" alt="imagenCorazon">
+                <img id="imageThree" src="./IMG/corazon.png" width="70px" alt="imagenCorazon">
             </div>
         </div>
-        
-        
-
-    </header>
-
-    <!--AQUI ESTA EL CONTENEDOR PARA LAS VIDASA-->
-    <div class="containerLifes">
-
-        <div id="vidas" class="myLifes">
-            <img id="imageOne" src="./IMG/corazon.png"  width="70px" alt="imagenCorazon">
-            <img id="imageTwo" src="./IMG/corazon.png" class="animate__animated animate__heartBeat animate__repeat-3" width="100px" alt="imagenCorazon">
-            <img id="imageThree" src="./IMG/corazon.png"  width="70px" alt="imagenCorazon">
-        </div>
-    </div>
-
-
-    
-
-    <!--BOTON PARA INICIAR JUEGO-->
-    <button id="myButton" class="buttonPlay">EMPEZAR JUEGO</button>
-    <button id="myButton2" class="buttonPlay2">REINICIAR JUEGO </button>
 
 
 
-    <!--DENTRO DE ESTE SECTION ESTA TODA LA PARTE DE LA IMAGEN,PISTAS Y INPUT-->
-    <section id="section" class="mySection">
 
-       <!--
+        <!--BOTON PARA INICIAR JUEGO-->
+        <button id="myButton" class="buttonPlay">EMPEZAR JUEGO</button>
+        <button id="myButton2" class="buttonPlay2">REINICIAR JUEGO </button>
+
+
+
+        <!--DENTRO DE ESTE SECTION ESTA TODA LA PARTE DE LA IMAGEN,PISTAS Y INPUT-->
+        <section id="section" class="mySection">
+
+            <!--
          <article id="article1" class="myArticle1">
             <img src="./IMG/imagenHorca.png" alt="">
         </article>
        -->
 
-        <!--ESPACIO PARA LAS PISTAS-->
-        <article id="articleMiddle" class="myArticleMiddle">
+            <!--ESPACIO PARA LAS PISTAS-->
+            <article id="articleMiddle" class="myArticleMiddle">
 
-            <div class="pista pista0">
-                <h4>PISTA: </h4>
-                <p> Lugar donde viven muchas personas y que está hecho de ladrillos y cemento, suele ser alto y tiene ventanas y balcones</p>
-                <img id="imagePista" src="./IMG/edificio.png" alt="">
-            </div>
-
-            <div class="pista pista1">
-                <h4>PISTA: </h4>
-                <p>El nivel académico más alto que puedes alcanzar en la educación superior, requiere una investigación profunda y una tesis</p>
-                <img id="imagePista" src="./IMG/doctorado.png" alt="">
-
-            </div>
-
-            <div class="pista pista2">
-                <h4>PISTA: </h4>
-                <p>Un profesional legal que defiende a sus clientes en los tribunales y brinda asesoramiento legal</p>
-                <img id="imagePista" src="./IMG/abogado.png" alt="">
-
-            </div>
-
-            <div class="pista pista3">
-                <h4>PISTA: </h4>
-                <p>Una prenda de vestir que se usa alrededor del cuello para ocasiones formales</p>
-                <img id="imagePista" src="./IMG/corbata.png" alt="">
-
-            </div>
-
-            <div class="pista pista4">
-                <h4>PISTA: </h4>
-                <p>Calzado abierto y cómodo que se usa en climas cálidos</p>
-                <img id="imagePista" src="./IMG/sandalias.png" alt="">
-
-            </div>
-
-            <div class="pista pista5">
-                <h4>PISTA: </h4>
-                <p>Una actividad física planificada y repetitiva que involucra movimiento del cuerpo con el propósito de mejorar la condición física, la salud o el rendimiento atlético. Puede abarcar una amplia variedad de actividades</p>
-            
-                <img id="imagePista" src="./IMG/ejercicio.jpg" alt="">
-
-            </div>
-
-            <div class="pista pista6">
-                <h4>PISTA: </h4>
-                <p>Un dispositivo de entrada que se utiliza para escribir en computadoras y dispositivos electrónicos</p>
-            
-                <img id="imagePista" src="./IMG/teclado.png" alt="">
-            </div>
-
-            <div class="pista pista7">
-                <h4>PISTA: </h4>
-                <p>Otro término para una computadora personal o PC</p>
-                <img id="imagePista" src="./IMG/ordenador.png" alt="">
-
-            </div>
-
-            <div class="pista pista8">
-                <h4>PISTA: </h4>
-                <p>Un cuaderno o bloc de notas utilizado para tomar notas o escribir información</p>
-                <img id="imagePista" src="./IMG/libreta.png" alt="">
-
-            </div>
-
-            <div class="pista pista9">
-                <h4>PISTA: </h4>
-                <p>Un lugar donde las personas van para cortarse el pelo y recibir servicios de belleza capilar</p>
-                <img id="imagePista" src="./IMG/peluqueria.PNG" alt="">
-
-            </div>
-
-            <div class="pista pista10">
-                <h4>PISTA: </h4>
-                <p>Un profesional de la salud dental que se especializa en el cuidado de los dientes y las encías</p>
-                <img id="imagePista" src="./IMG/dentista.PNG" alt="">
-
-            </div>
-
-            <div class="pista pista11">
-                <h4>PISTA: </h4>
-                <p>Un instrumento musical de cuerda que se toca con los dedos o con una púa. Puede tener 6 o 12 cuerdas.</p>
-                <img id="imagePista" src="./IMG/guitarra.png"  alt="">
-            </div>
-            
-            <div class="pista pista12">
-                <h4>PISTA: </h4>
-                <p>Una abertura en una pared o en una estructura de un edificio que permite la entrada de luz y aire. Puede tener cristal o madera.</p>
-                <img id="imagePista" src="./IMG/ventana.png"  alt="">
-            </div>
-            
-            <div class="pista pista13">
-                <h4>PISTA: </h4>
-                <p>El lugar de una casa o un restaurante donde se preparan y cocinan alimentos. Suele estar equipado con una estufa, un horno y utensilios de cocina.</p>
-                <img id="imagePista" src="./IMG/cocina.png"  alt="">
-            </div>
-            
-            <div class="pista pista14">
-                <h4>PISTA: </h4>
-                <p>Un vehículo de dos ruedas que se impulsa pedaleando. Es una forma popular de transporte y ejercicio físico.</p>
-                <img id="imagePista" src="./IMG/bicicleta.png"  alt="">
-            </div>
-            
-            <div class="pista pista15">
-                <h4>PISTA: </h4>
-                <p>Una forma de arte que utiliza colores, pigmentos y medios para crear obras visuales. Puede ser pintura al óleo, acrílica, acuarela, entre otros.</p>
-                <img id="imagePista" src="./IMG/pintura.png"  alt="">
-            </div>
-
-            <div class="pista pista16">
-                <h4>PISTA: </h4>
-                <p>Un objeto que se utiliza para protegerse de la lluvia o el sol. Suele tener un mango y se abre para cubrirse.</p>
-                <img id="imagePista" src="./IMG/paraguas.png" alt="">
-            </div>
-            
-            <div class="pista pista17">
-                <h4>PISTA: </h4>
-                <p>Calzado deportivo o zapatillas de deporte que se utiliza para actividades físicas o deportivas. Son cómodas y suelen tener suela de goma.</p>
-                <img id="imagePista" src="./IMG/zapatillas.png" alt="">
-            </div>
-            
-            <div class="pista pista18">
-                <h4>PISTA: </h4>
-                <p>Un dispositivo de comunicación que se utiliza para hacer llamadas telefónicas, enviar mensajes de texto y acceder a Internet. Puede ser móvil o fijo.</p>
-                <img id="imagePista" src="./IMG/telefono.png" alt="">
-            </div>
-            
-            <div class="pista pista19">
-                <h4>PISTA: </h4>
-                <p>Una prenda de vestir que se coloca sobre el torso y que generalmente tiene mangas cortas. Puede tener diseños, colores y estampados diversos.</p>
-                <img id="imagePista" src="./IMG/camiseta.png" alt="">
-            </div>
-            
-            <div class="pista pista20">
-                <h4>PISTA: </h4>
-                <p>Un dispositivo que se utiliza para medir el tiempo. Puede ser de pulsera o de bolsillo y suele tener manecillas o una pantalla digital.</p>
-                <img id="imagePista" src="./IMG/reloj.png" alt="">
-            </div>
-            
-            <div class="pista pista21">
-                <h4>PISTA: </h4>
-                <p>Un instrumento de escritura que se utiliza para hacer dibujos o escribir en papel. Tiene una mina de grafito o tinta en su interior.</p>
-                <img id="imagePista" src="./IMG/lapiz.png" alt="">
-            </div>
-            
-            <div class="pista pista22">
-                <h4>PISTA: </h4>
-                <p>Una publicación impresa que contiene noticias, artículos y fotografías sobre diversos temas. Puede ser de entretenimiento, noticias, deportes, etc.</p>
-                <img id="imagePista" src="./IMG/revista.png" alt="">
-            </div>
-            
-            <div class="pista pista23">
-                <h4>PISTA: </h4>
-                <p>Un lugar de aprendizaje donde los estudiantes asisten a clases y reciben educación formal. Puede ser una escuela primaria, secundaria o universidad.</p>
-                <img id="imagePista" src="./IMG/escuela.png" alt="">
-            </div>
-            
-            
-        </article>
-
-        <!--ESPACIO PARA LA INTERACCION DEL USUARIO CON EL INPUT ETC-->
-        <article id="article2" class="myArticle2">
-
-            <div id="wordDisplay" class="espacioGuiones">
-                <!--AQUI ESTAN LOS GUIONES DE LA PALABRA-->
-            </div>
-
-            <!--INPUT PARA LAS LETRAS-->
-            <div class="inputQuestion">
-                <input id="myInput" type="text" pattern="[A-Za-z]+" placeholder="Introduce una letra"> <button type="submit" id="buttonSend">Probar</input>
-            </div>
-
-            <!--AQUI ESTA EL ESPACIO A MOSTRAR DE LAS PALABRAS CORRECTAS E INCORRECTAS-->
-            <div class="checkWords">
-                <h5>Letras incorrectas: <p id="mostrarIncorrectas"></p></h5>
-                <h5>Letras correctas: <p id="mostrarCorrectas"></p></h5>
-            </div>
-        </article>
-
-    </section>
-
-    <div class="cambioPalabra">
-        <img id="fotoCambio" src="./IMG/cambio.png" width="25px" alt="">
-        <h6 id="cambiar">Cambiar de Palabra</h6>
-    </div>
-
-    <div id="botonCambioFondo" class="cambioFondo">
-        <div id="botonCambio">
-
-            <div class="izq">
-                <div id="bolaSeleccion" class="redondo animate__animated animate__fadeInRight">
-                </div>
-                <img id="imagenOscuro" src="./IMG/sol.png" width="20px" alt="">
-            </div>
-    
-            <div class="derecha">
-                <div id="bolaSeleccion2" class="redondo2 animate__animated animate__fadeInLeft">
-                    
+                <div class="pista pista0">
+                    <h4>PISTA: </h4>
+                    <p> Lugar donde viven muchas personas y que está hecho de ladrillos y cemento, suele ser alto y
+                        tiene ventanas y balcones</p>
+                    <img id="imagePista" src="./IMG/edificio.png" alt="">
                 </div>
 
-                <img id="imagenOscuro2" src="./IMG/luna.png" width="20px" alt="">
+                <div class="pista pista1">
+                    <h4>PISTA: </h4>
+                    <p>El nivel académico más alto que puedes alcanzar en la educación superior, requiere una
+                        investigación profunda y una tesis</p>
+                    <img id="imagePista" src="./IMG/doctorado.png" alt="">
+
+                </div>
+
+                <div class="pista pista2">
+                    <h4>PISTA: </h4>
+                    <p>Un profesional legal que defiende a sus clientes en los tribunales y brinda asesoramiento legal
+                    </p>
+                    <img id="imagePista" src="./IMG/abogado.png" alt="">
+
+                </div>
+
+                <div class="pista pista3">
+                    <h4>PISTA: </h4>
+                    <p>Una prenda de vestir que se usa alrededor del cuello para ocasiones formales</p>
+                    <img id="imagePista" src="./IMG/corbata.png" alt="">
+
+                </div>
+
+                <div class="pista pista4">
+                    <h4>PISTA: </h4>
+                    <p>Calzado abierto y cómodo que se usa en climas cálidos</p>
+                    <img id="imagePista" src="./IMG/sandalias.png" alt="">
+
+                </div>
+
+                <div class="pista pista5">
+                    <h4>PISTA: </h4>
+                    <p>Una actividad física planificada y repetitiva que involucra movimiento del cuerpo con el
+                        propósito de mejorar la condición física, la salud o el rendimiento atlético. Puede abarcar una
+                        amplia variedad de actividades</p>
+
+                    <img id="imagePista" src="./IMG/ejercicio.jpg" alt="">
+
+                </div>
+
+                <div class="pista pista6">
+                    <h4>PISTA: </h4>
+                    <p>Un dispositivo de entrada que se utiliza para escribir en computadoras y dispositivos
+                        electrónicos</p>
+
+                    <img id="imagePista" src="./IMG/teclado.png" alt="">
+                </div>
+
+                <div class="pista pista7">
+                    <h4>PISTA: </h4>
+                    <p>Otro término para una computadora personal o PC</p>
+                    <img id="imagePista" src="./IMG/ordenador.png" alt="">
+
+                </div>
+
+                <div class="pista pista8">
+                    <h4>PISTA: </h4>
+                    <p>Un cuaderno o bloc de notas utilizado para tomar notas o escribir información</p>
+                    <img id="imagePista" src="./IMG/libreta.png" alt="">
+
+                </div>
+
+                <div class="pista pista9">
+                    <h4>PISTA: </h4>
+                    <p>Un lugar donde las personas van para cortarse el pelo y recibir servicios de belleza capilar</p>
+                    <img id="imagePista" src="./IMG/peluqueria.PNG" alt="">
+
+                </div>
+
+                <div class="pista pista10">
+                    <h4>PISTA: </h4>
+                    <p>Un profesional de la salud dental que se especializa en el cuidado de los dientes y las encías
+                    </p>
+                    <img id="imagePista" src="./IMG/dentista.PNG" alt="">
+
+                </div>
+
+                <div class="pista pista11">
+                    <h4>PISTA: </h4>
+                    <p>Un instrumento musical de cuerda que se toca con los dedos o con una púa. Puede tener 6 o 12
+                        cuerdas.</p>
+                    <img id="imagePista" src="./IMG/guitarra.png" alt="">
+                </div>
+
+                <div class="pista pista12">
+                    <h4>PISTA: </h4>
+                    <p>Una abertura en una pared o en una estructura de un edificio que permite la entrada de luz y
+                        aire. Puede tener cristal o madera.</p>
+                    <img id="imagePista" src="./IMG/ventana.png" alt="">
+                </div>
+
+                <div class="pista pista13">
+                    <h4>PISTA: </h4>
+                    <p>El lugar de una casa o un restaurante donde se preparan y cocinan alimentos. Suele estar equipado
+                        con una estufa, un horno y utensilios de cocina.</p>
+                    <img id="imagePista" src="./IMG/cocina.png" alt="">
+                </div>
+
+                <div class="pista pista14">
+                    <h4>PISTA: </h4>
+                    <p>Un vehículo de dos ruedas que se impulsa pedaleando. Es una forma popular de transporte y
+                        ejercicio físico.</p>
+                    <img id="imagePista" src="./IMG/bicicleta.png" alt="">
+                </div>
+
+                <div class="pista pista15">
+                    <h4>PISTA: </h4>
+                    <p>Una forma de arte que utiliza colores, pigmentos y medios para crear obras visuales. Puede ser
+                        pintura al óleo, acrílica, acuarela, entre otros.</p>
+                    <img id="imagePista" src="./IMG/pintura.png" alt="">
+                </div>
+
+                <div class="pista pista16">
+                    <h4>PISTA: </h4>
+                    <p>Un objeto que se utiliza para protegerse de la lluvia o el sol. Suele tener un mango y se abre
+                        para cubrirse.</p>
+                    <img id="imagePista" src="./IMG/paraguas.png" alt="">
+                </div>
+
+                <div class="pista pista17">
+                    <h4>PISTA: </h4>
+                    <p>Calzado deportivo o zapatillas de deporte que se utiliza para actividades físicas o deportivas.
+                        Son cómodas y suelen tener suela de goma.</p>
+                    <img id="imagePista" src="./IMG/zapatillas.png" alt="">
+                </div>
+
+                <div class="pista pista18">
+                    <h4>PISTA: </h4>
+                    <p>Un dispositivo de comunicación que se utiliza para hacer llamadas telefónicas, enviar mensajes de
+                        texto y acceder a Internet. Puede ser móvil o fijo.</p>
+                    <img id="imagePista" src="./IMG/telefono.png" alt="">
+                </div>
+
+                <div class="pista pista19">
+                    <h4>PISTA: </h4>
+                    <p>Una prenda de vestir que se coloca sobre el torso y que generalmente tiene mangas cortas. Puede
+                        tener diseños, colores y estampados diversos.</p>
+                    <img id="imagePista" src="./IMG/camiseta.png" alt="">
+                </div>
+
+                <div class="pista pista20">
+                    <h4>PISTA: </h4>
+                    <p>Un dispositivo que se utiliza para medir el tiempo. Puede ser de pulsera o de bolsillo y suele
+                        tener manecillas o una pantalla digital.</p>
+                    <img id="imagePista" src="./IMG/reloj.png" alt="">
+                </div>
+
+                <div class="pista pista21">
+                    <h4>PISTA: </h4>
+                    <p>Un instrumento de escritura que se utiliza para hacer dibujos o escribir en papel. Tiene una mina
+                        de grafito o tinta en su interior.</p>
+                    <img id="imagePista" src="./IMG/lapiz.png" alt="">
+                </div>
+
+                <div class="pista pista22">
+                    <h4>PISTA: </h4>
+                    <p>Una publicación impresa que contiene noticias, artículos y fotografías sobre diversos temas.
+                        Puede ser de entretenimiento, noticias, deportes, etc.</p>
+                    <img id="imagePista" src="./IMG/revista.png" alt="">
+                </div>
+
+                <div class="pista pista23">
+                    <h4>PISTA: </h4>
+                    <p>Un lugar de aprendizaje donde los estudiantes asisten a clases y reciben educación formal. Puede
+                        ser una escuela primaria, secundaria o universidad.</p>
+                    <img id="imagePista" src="./IMG/escuela.png" alt="">
+                </div>
+
+
+            </article>
+
+            <!--ESPACIO PARA LA INTERACCION DEL USUARIO CON EL INPUT ETC-->
+            <article id="article2" class="myArticle2">
+
+                <div id="wordDisplay" class="espacioGuiones">
+                    <!--AQUI ESTAN LOS GUIONES DE LA PALABRA-->
+                </div>
+
+                <!--INPUT PARA LAS LETRAS-->
+                <div class="inputQuestion">
+                    <input id="myInput" type="text" pattern="[A-Za-z]+" placeholder="Introduce una letra"></input>
+                </div>
+
+                <!--AQUI ESTA EL ESPACIO A MOSTRAR DE LAS PALABRAS CORRECTAS E INCORRECTAS-->
+                <div class="checkWords">
+                    <h5>Letras incorrectas: <p id="mostrarIncorrectas"></p>
+                    </h5>
+                    <h5>Letras correctas: <p id="mostrarCorrectas"></p>
+                    </h5>
+                </div>
+            </article>
+
+        </section>
+
+        <div class="cambioPalabra">
+            <img id="fotoCambio" src="./IMG/cambio.png" width="25px" alt="">
+            <h6 id="cambiar">Cambiar de Palabra</h6>
+        </div>
+
+        <div id="botonCambioFondo" class="cambioFondo">
+            <div id="botonCambio">
+
+                <div class="izq">
+                    <div id="bolaSeleccion" class="redondo animate__animated animate__fadeInRight">
+                    </div>
+                    <img id="imagenOscuro" src="./IMG/sol.png" width="20px" alt="">
+                </div>
+
+                <div class="derecha">
+                    <div id="bolaSeleccion2" class="redondo2 animate__animated animate__fadeInLeft">
+
+                    </div>
+
+                    <img id="imagenOscuro2" src="./IMG/luna.png" width="20px" alt="">
+                </div>
             </div>
         </div>
-    </div>
-    
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.3/bootbox.min.js"></script>
-    <script src="./JS/script.js"></script>
 
-</body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.3/bootbox.min.js"></script>
+        <script src="./JS/script.js"></script>
+
+    </body>
+
 </html>
