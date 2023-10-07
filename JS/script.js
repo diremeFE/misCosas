@@ -74,18 +74,15 @@ window.onload = function () {
       myButton.style.display = "none";
       mySection.style.display = "flex";
       botonCambioFondo.style.display = "flex";
-
       articles.style.display = "flex";
-
 
     }, 300);
 
     // CON ESTAS 2 LINEAS OBTENDREMOS UNA PALABRA ALEATORIA DEL ARRAY DE PALABRAS
     let randomIndex = Math.floor(Math.random() * arrayWords.length);
     randomWord = arrayWords[randomIndex];
-    console.log(randomWord);
 
-    //VAMOS A SELECCIONAR DEL HTML CADA CLASE CON LA PALABRA pista Y LE AÑADIMOS EL VALOR DE LA Z
+    //VAMOS A SELECCIONAR DEL HTML CADA CLASE CON LA PALABRA pista Y LE AÑADIMOS EL VALOR DE RANDOM INDEX PARA AGARRAR CADA PISTA ADECUADA
     let pista = document.querySelector(".pista" + randomIndex);
     pista.style.display = "flex";
 
@@ -95,45 +92,61 @@ window.onload = function () {
     // AQUI MOSTRAMOS LOS GUIONES GENERADOS SEGUN EL TAMAÑO DE LA PALABRA EN EL HTML
     wordDisplay.innerHTML = dashes;
   }
-
   myButton.addEventListener("click", empezarJuego);
 
-  // Función para manejar la tecla presionada
+  // CON ESTA FUNCION HAREMOS ACCIONES CUANDO SE PULSE UNA TECLA
   function manejarTeclaPresionada(event) {
+    //GUARDAMOS EN UNA VARIABLE LA TECLA QUE SE ESTA PULSANDO
     var keyCode = event.keyCode;
 
+    //SI EL CODIGO DE LA TECLA PULSADA CONCUERDA CON EL 13 (CODIGO DE LA TECLA ENTER)
     if (keyCode == 13) {
+
+      //COGEMOS EL VALOR QUE SE HA INTRODUCIDO EN EL IMPUT Y LO PASAMOS A MAYUSCULAS(PARA POSTERIORMENTE COMPARARLO CON CADA LETRA DE LA PALABRA LA CUAL ESTA EN MAYUSCULAS)
       let inputValue = myInput.value.toUpperCase();
 
+      //SI DENTRO DE LA PALABRA SE INCLUYE LA LETRA DEL IMPUT ENTONCES...
       if (randomWord.includes(inputValue)) {
+
+        //AQUI COMPROBAREMOS SI YA HEMOS INTRODUCIDO ESA LETRA O NO
         if (arrayLetrasCorrectas.includes(inputValue)) {
           alert("Ya has introducido esa letra, prueba con otra");
         } else {
           arrayLetrasCorrectas.push(inputValue);
+          //INCREMENTEAMOS LA PUNTUACION EN 30 PUNTOS SI ACIERTA UNA LETRA
           puntuacion += 30;
           contadorPuntuacion.innerHTML = puntuacion;
         }
-
+        //SI LA LETRA NO SE HA REPETIDO, SE AÑADIRÁ AL ARRAY DEL CONTEO DE LETRAS CORRECTAS
         mostrarCorrectas.innerHTML = arrayLetrasCorrectas.join(", ");
         mostrarCorrectas.style.color = "green";
 
+        //REINICIALIZAMOS LA VARIABLE DASHES A VACIA
         dashes = "";
 
+        //RECORREMOS TODA LA PALABRA "SECRETA"
         for (let i = 0; i < randomWord.length; i++) {
+
           if (randomWord[i] === inputValue) {
+            //SI LA LETRA ES CORRECTA SE SUSTITUIRÁ EL GUION POR LA LETRA DEL INPUT
             dashes += inputValue;
           } else {
+            //SINO SE MANTENDRÁ EL GUION BAJO
             dashes += wordDisplay.innerHTML[i];
           }
         }
 
         wordDisplay.innerHTML = dashes;
 
-        // Verifica si el usuario ha ganado
-        if (!dashes.includes("_")) {
+        // VERIFICAMOS SI EL USUARIO ACIERTA LA PALABRA
+        if(!dashes.includes("_")) {
+
           winsParty += 1;
+
+          //COMPROBACION LO USAREMOS PARA MANEJAR SI GANA O PIERDE LA PARTIDA
           comprobacion = 1;
 
+          //DECIDO USAR UNA LIBRERIA PARA MOSTRAR UN ALERT CHULO SI SE GANA O SE PIERDE LA PARTIDA
           //ALERTA PERSONALIZADA CON LIBRERIA BOOTBOX
           let dialog = bootbox.dialog({
             title: "ESTAMOS COMPROBANDO TU RESULTADO...",
@@ -151,18 +164,31 @@ window.onload = function () {
           //LLAMAMOS A LA FUNCION REINICIAR JUEGO
           reiniciarJuego();
         }
-      } else {
-        if (arrayLetrasIncorrectas.includes(inputValue)) {
+      
+        //SI NO ESTA LA LETRA EN LA PALABRA...
+      }else {
+
+        if(arrayLetrasIncorrectas.includes(inputValue)) {
           alert("Ya has introducido esa letra, prueba con otra");
-        } else {
+
+        }else {
+
+          //AGREGAREMOS AL ARRAY DEL CONTEO DE LETRAS INCORRECTAS LA LETRA INCORRECTA
           arrayLetrasIncorrectas.push(inputValue);
+
+          //RESTAREMOS LA PUNTUACION EN 10 PUNTOS SI LA LETRA ES INCORRECTA
           puntuacion -= 10;
           contadorPuntuacion.innerHTML = puntuacion;
+
         }
 
         mostrarIncorrectas.style.color = "red";
+
+        //PONDREMOS COMAS A CADA LETRA PARA DISTINGUIR DE FORMA CORRECTA CADA LETRA MAL INTRODUCIDA
         mostrarIncorrectas.textContent = arrayLetrasIncorrectas.join(", ");
 
+        //EN ESTE SWITCH COMPRUEBO EL TAMAÑO DEL ARRAY DE LAS LETRAS INCORRECTAS
+        //SI ES UNO, QUITO UN CORAZON,LO MISMO PARA EL 2o Y 3er CORAZON
         switch (arrayLetrasIncorrectas.length) {
           case 1:
             imageTwo.style.display = "none";
@@ -175,7 +201,9 @@ window.onload = function () {
             break;
         }
 
+        //AQUI QUIERO VER SI EL ULTIMO CORAZON NO ESTA ENTONCES SIGNIFICA QUE PERDIO LA PARTIDA Y MOSTRAREMOS EL ALERT PERSONALIZADO
         if (imageOne.style.display === "none") {
+
           let dialog = bootbox.dialog({
             title: "ESTAMOS COMPROBANDO TU RESULTADO...",
             message:
@@ -189,29 +217,44 @@ window.onload = function () {
             }, 10000);
           });
 
+          //COMPROBACION PASARÁ A VALER 0 (POSTERIORMENTE LO USAREMOS PARA EL CONTEO DE PARTIDAS GANADAS O PERDIDAS)
           comprobacion = 0;
+
+          //INCREMENTAMOS LAS PARTIDAS PERDIDAS EN 1 (POSTERIORMENTE LO USAMOS)
           lossesParty += 1;
 
+          //LLAMAMOS A REINICIAR JUEGO DE IGUAL FORMA QUE SI GANAMOS LA PARTIDA TAMBIEN SI LA PERDEMOS
           reiniciarJuego();
+
         }
       }
     }
   }
   document.addEventListener("keydown", manejarTeclaPresionada);
 
+  //EN ESTA FUNCION CONTROLAREMOS EL REINICIO DEL JUEGO
   function reiniciarJuego() {
+
+    //SI LA PARTIDA SE HA GANADADO SIGNIFICA QUE COMPROBACION VALDRÁ 1
     if (comprobacion === 1) {
+
       partidasGanadas.innerHTML = winsParty;
       partidasGanadas.style.color = "green";
+
     }
 
+    //EN CASO CONTRARIO, SI VALE 0 ENTONCES SIGNIFICARÁ QUE HABREMOS PERDIDO
     if (comprobacion === 0) {
+
       partidasPerdidas.innerHTML = lossesParty;
       partidasPerdidas.style.color = "red";
+
     }
 
-    // Ocultar todas las pistas
+    // OCULTAREMOS CADA UNA DE LAS PISTAS, COGIENDO CON QUERYSELECTOR CADA CLASE CON NOMBRE PISTA
     let pistas = document.querySelectorAll(".pista");
+
+    //RECORREMOS TODAS LAS PISTAS CON EL BUCLE FOREACH Y LAS OCULTAMOS
     for (let pista of pistas) {
       pista.style.display = "none";
     }
@@ -223,6 +266,7 @@ window.onload = function () {
     arrayLetrasCorrectas.length = 0;
     arrayLetrasIncorrectas.length = 0;
 
+    //VOLVEMOS A MOSTRAR LOS CORAZONES
     imageOne.style.display = "flex";
     imageTwo.style.display = "flex";
     imageThree.style.display = "flex";
@@ -248,23 +292,23 @@ window.onload = function () {
     // QUITAREMOS EL BOTON DE REINICIAR JUEGO
     myButton2.style.display = "none";
   }
-
   myButton2.addEventListener("click", reiniciarJuego);
 
   
-  //TODO LO RELACIONADO CON EL VOLUMEN
+  //TODO LO RELACIONADO CON EL VOLUMEN DEL JUEGO
   let buttonVolume = document.getElementById("buttonVolume");
   let desplegableVolume = document.getElementById("desplegableVolume");
   const backgroundMusic = document.getElementById("backgroundMusic");
   const volumeControl = document.getElementById("volumeControl");
 
+  //CON ESTA FUNCION LO QUE HACEMOS ES EL DESPLEGABLE DEL VOLUMEN
   function desplegarAjustesVolumen() {
     desplegableVolume.style.display = "flex";
   }
-
   buttonVolume.addEventListener("click", desplegarAjustesVolumen);
 
-  volumeControl.addEventListener("input", function () {
+  //EN ESTE EVENTO CONTROLAREMOS LA BARRA DE SONIDO DEL JUEGO
+  volumeControl.addEventListener("input", function() {
     backgroundMusic.volume = this.value;
   });
   
@@ -272,15 +316,14 @@ window.onload = function () {
   //TODO LO RELACIONADO CON EL CAMBIO DEL COLOR DEL TEMA
   let bolaSeleccion = document.getElementById("bolaSeleccion");
   let imagenOscuro = document.getElementById("imagenOscuro");
-
   let imagenOscuro2 = document.getElementById("imagenOscuro2");
   let bolaSeleccion2 = document.getElementById("bolaSeleccion2");
-
   let miBody = document.getElementById("miBody");
 
   //CON QUERYSELECTORALL PARA COGER TODOS LOS ELEMENTOS CON CLASE .PISTA
   let pistas = document.querySelectorAll(".pista");
 
+  //FUNCION PARA EL COLOR OSCURO DEL TEMA
   function fondoOscuro() {
     let buttonVolume = document.getElementById("buttonVolume");
     let buttonReglas = document.getElementById("buttonReglas");
@@ -293,7 +336,6 @@ window.onload = function () {
     let contadorPartidasGan = document.getElementById("contadorPartidasGan");
     let contadorPartidasPerd = document.getElementById("contadorPartidasPerd");
     let punt = document.getElementById("punt");
-
 
     bolaSeleccion.style.display = "none";
     bolaSeleccion2.style.display = "flex";
@@ -329,18 +371,14 @@ window.onload = function () {
       pistas.style.backgroundColor = "#36393B";
       pistas.style.boxShadow = "12px 12px 30px 0px #000";
 
-
       let parrafosPistas = document.querySelectorAll("p");
 
       //REALIZO OTRO FOREACH DENTRO DEL DEL PADRE PARA COGER CADA ELEMENTO P DENTRO DE CADA CLASE PISTA
       parrafosPistas.forEach(function(parrafosPistas){
-
         parrafosPistas.style.color="white";
-
       });
 
     });
-
 
   }
   imagenOscuro2.addEventListener("click", fondoOscuro);
